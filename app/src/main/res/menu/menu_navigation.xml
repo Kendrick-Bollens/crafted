@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/hilfe_finden"
+        android:title="Hilfe finden"
+        android:icon="@drawable/ic_hilfe_finden"/>
+    <item
+        android:id="@+id/helfen"
+        android:title="Helfen"
+        android:icon="@drawable/ic_helfen"/>
+
+    <item
+        android:id="@+id/chats"
+        android:title="Chats"
+        android:icon="@drawable/ic_chats"/>
+
+    <item
+        android:id="@+id/mein_profil"
+        android:title="Mein Profil"
+        android:icon="@drawable/ic_mein_profil"/>
+</menu>

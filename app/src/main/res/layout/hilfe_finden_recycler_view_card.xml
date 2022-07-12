@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:layout_marginBottom="14dp"
+        app:contentPaddingTop="11dp"
+        app:contentPaddingLeft="11dp"
+        app:contentPaddingRight="16dp"
+        app:contentPaddingBottom="24dp"
+        app:cardCornerRadius="15dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:rowCount="2">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hilfe_finden_profil_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    app:cardCornerRadius="40dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:srcCompat="@drawable/ic_mein_profil"
+                        android:scaleType="centerCrop"
+                        />
+
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/hilfe_finden_profil_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name Person"
+
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="-8sp"
+                        android:textAppearance="@style/hilfe_finden_card_name"
+                        android:gravity="center_horizontal|center"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/hilfe_finden_profil_verified"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="8dp"
+                        android:drawablePadding="4dp"
+                        android:drawableLeft="@drawable/ic_verified"
+                        android:text="verfizierter Tag"
+                        android:textAppearance="@style/hilfe_finden_card_verified"
+                        android:gravity="center_horizontal|center"
+                        />
+
+                    <TextView
+                        android:id="@+id/hilfe_finden_profil_rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="9dp"
+                        android:drawablePadding="4dp"
+                        android:drawableLeft="@drawable/ic_rating"
+                        android:text="0/5"
+                        android:textAppearance="@style/hilfe_finden_card_rating"
+                        android:gravity="center_horizontal|center"
+                        />
+                </LinearLayout>
+
+            </GridLayout>
+
+            <TextView
+                android:id="@+id/hilfe_finden_profil_beschreibung"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="29dp"
+                android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+                android:textAppearance="@style/hilfe_finden_card_beschreibung"
+                android:gravity="top"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

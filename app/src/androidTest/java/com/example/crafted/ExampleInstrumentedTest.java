@@ -1,4 +1,4 @@
-package com.example.craftsquad;
+package com.example.crafted;
 
 import android.content.Context;
 

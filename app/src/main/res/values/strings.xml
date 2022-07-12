@@ -1,3 +1,58 @@
 <resources>
+    <!--Haupt App -->
     <string name="app_name">CraftSquad</string>
+
+    <!-- Page Hilfe finden-->
+    <string name="hilfe_finden_header">Hilfe finden</string>
+
+
+    <!-- Testdaten -->
+    <string-array name="hilfe_finden_profil_name">
+        <item>Henry Gräfe</item>
+        <item>Ana ORiley</item>
+        <item>George Obama</item>
+        <item>Stan Daniels</item>
+        <item>Jill Styles</item>
+    </string-array>
+
+    <string-array name="hilfe_finden_profil_verified">
+        <item>Elektriker</item>
+        <item>Statiker</item>
+        <item>Tischler</item>
+        <item>Idiot</item>
+        <item>Klemptner</item>
+    </string-array>
+
+    <integer-array name="hilfe_finden_profil_rating">
+        <item>5</item>
+        <item>2</item>
+        <item>3</item>
+        <item>1</item>
+        <item>4</item>
+    </integer-array>
+
+    <string-array name="hilfe_finden_profil_beschreibung">
+        <item>Habe schon mehrere Häuser verkabelt</item>
+        <item>War schon auf mehreren Bauprojekten</item>
+        <item>Vor kurzem habe ich ein Boot gebaut</item>
+        <item>Habe schon einmal mein Haus abgefackelt und es überlebt</item>
+        <item>Bin für die Rohrverlegung des Rathauses zuständig gewesen</item>
+    </string-array>
+
+
+    <string-array name="hilfe_finden_profil_tag">
+        <item>Holz</item>
+        <item>Statik</item>
+        <item>Sanitär</item>
+        <item>Metall</item>
+        <item>Elektrik</item>
+    </string-array>
+    <string name="title_activity_login">login</string>
+
+    <!-- Strings used for Login -->
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="Login">Login</string>
+    <string name="ForgetPass">Passwort vergessen</string>
+
 </resources>

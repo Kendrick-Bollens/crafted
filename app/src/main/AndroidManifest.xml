@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.craftsquad">
+    package="com.example.crafted">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -11,8 +14,30 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.CraftSquad"
+        android:theme="@style/Theme.crafted"
         tools:targetApi="31">
+        <activity
+            android:name=".profil"
+            android:exported="false" />
+        <activity
+            android:name=".ticket"
+            android:exported="false" />
+        <activity
+            android:name=".login"
+            android:exported="true"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.crafted.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.AD_MANAGER_APP"
+            android:value="true" />
+
         <activity
             android:name=".mein_profil"
             android:exported="false" />
@@ -23,14 +48,8 @@
             android:name=".helfen"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:name=".hilfe_finden"
+            android:exported="false" />
     </application>
 
 </manifest>

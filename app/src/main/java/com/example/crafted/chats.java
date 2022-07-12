@@ -1,4 +1,4 @@
-package com.example.craftsquad;
+package com.example.crafted;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +32,7 @@ public class chats extends AppCompatActivity {
                     case R.id.chats:
                         return true;
                     case R.id.hilfe_finden:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.helfen:

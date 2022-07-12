@@ -1,4 +1,4 @@
-package com.example.craftsquad;
+package com.example.crafted;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,18 +9,18 @@ import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class mein_profil extends AppCompatActivity {
+public class profil extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mein_profil);
+        setContentView(R.layout.activity_profil);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.mein_profil);
+        bottomNavigationView.setSelectedItemId(R.id.hilfe_finden);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -30,9 +30,10 @@ public class mein_profil extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.mein_profil:
-                        return true;
+                        startActivity(new Intent(getApplicationContext(), mein_profil.class));
+                        overridePendingTransition(0,0);
                     case R.id.hilfe_finden:
-                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.helfen:
@@ -47,6 +48,11 @@ public class mein_profil extends AppCompatActivity {
                 return false;
             }
         });
+
+        //:TODO
+
+
+
 
     }
 }

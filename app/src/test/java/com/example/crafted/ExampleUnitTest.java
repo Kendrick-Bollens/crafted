@@ -1,4 +1,4 @@
-package com.example.craftsquad;
+package com.example.crafted;
 
 import org.junit.Test;
 

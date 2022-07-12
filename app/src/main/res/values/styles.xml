@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- hilfe finden -->
+    <style name="hilfe_finden_header">
+
+        <item name="android:textSize">
+            23sp
+        </item>
+
+        <item name="android:textColor">
+            #1B4332
+        </item>
+    </style>
+
+
+    <!-- Hilfe Finden Card -->
+    <style name="hilfe_finden_card_name">
+
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:textColor">
+            #1C1208
+        </item>
+
+    </style>
+
+    <style name="hilfe_finden_card_verified">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #1C1208
+        </item>
+
+    </style>
+
+    <style name="hilfe_finden_card_rating">
+
+        <item name="android:textSize">
+            19sp
+        </item>
+
+        <item name="android:textColor">
+            #1C1208
+        </item>
+
+    </style>
+
+    <style name="hilfe_finden_card_beschreibung">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #524D48
+        </item>
+
+    </style>
+
+    <!-- Helfen Finden Card -->
+    <style name="helfen_card_Titel">
+
+        <item name="android:textSize">
+            15sp
+        </item>
+
+        <item name="android:textStyle">
+            bold
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="helfen_card_Beschrebung">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #524D48
+        </item>
+
+    </style>
+
+    <style name="helfen_card_tags">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #524D48
+        </item>
+
+    </style>
+
+    <style name="helfen_card_name">
+
+        <item name="android:textSize">
+            13sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <style name="helfen_card_rating">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:textColor">
+            #000000
+        </item>
+
+    </style>
+
+    <!-- Mein Profil -->
+    <style name="mein_profil_name">
+
+        <item name="android:textSize">
+            19sp
+        </item>
+
+        <item name="android:textStyle">
+            bold
+        </item>
+
+        <item name="android:textColor">
+            #1C1208
+        </item>
+
+    </style>
+
+    <style name="mein_profil_verified">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #1C1208
+        </item>
+
+    </style>
+
+
+
+
+
+</resources>

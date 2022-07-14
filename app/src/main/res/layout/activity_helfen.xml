@@ -1,504 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".helfen">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/bottom_navbar_height"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <GridLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:rowCount="2">
+            <TextView
+                android:id="@+id/TItel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/poppins"
+                android:gravity="center_horizontal|top"
+                android:text="Helfen"
+                android:textAppearance="@style/hilfe_finden_header"
+                android:textColor="#1B4332 "
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:text="Helfen"
-                    android:textColor="@color/black"
-                    android:textSize="40sp"
-                    android:textStyle="bold" />
-
-            </GridLayout>
+            <ImageView
+                android:id="@+id/helfen_hilfe_anbieten"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_hilfe_anbieten" />
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                app:cardCornerRadius="10dp"
-                app:cardUseCompatPadding="true">
-
-                <SearchView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
-
-
-            </androidx.cardview.widget.CardView>
-
-            <HorizontalScrollView
+                android:id="@+id/cardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fillViewport="true">
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/searchbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/helfen_RecyclerView_tags"
+                app:layout_constraintTop_toBottomOf="@+id/TItel">
 
-                <LinearLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent">
 
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag A"
-                        android:textOn="Tag A" />
-
-                    <ToggleButton
+                    <SearchView
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag B"
-                        android:textOn="Tag B" />
+                        android:iconifiedByDefault="false"
+                        android:queryBackground="@android:color/transparent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/helfen_searchfilter"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0">
 
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag C"
-                        android:textOn="Tag C" />
+                    </SearchView>
 
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag D"
-                        android:textOn="Tag D" />
-
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag E"
-                        android:textOn="Tag E" />
-
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag F"
-                        android:textOn="Tag F" />
-
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag G"
-                        android:textOn="Tag G" />
-
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag H"
-                        android:textOn="Tag H" />
-
-                    <ToggleButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="5dp"
-                        android:background="@drawable/toggle_button_selector"
-                        android:textOff="Tag I"
-                        android:textOn="Tag I" />
-                </LinearLayout>
-            </HorizontalScrollView>
-
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Media -->
                     <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:contentDescription="needHelpPls"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_mein_profil" />
+                        android:id="@+id/helfen_searchfilter"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginEnd="18dp"
+                        android:gravity="center_horizontal|center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_suchleiste_filtern" />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <!-- Title, secondary and supporting text -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ticket-Titel"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna..."
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag A"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag B"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag C"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag D"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:text="4/5"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-                    </LinearLayout>
-                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/helfen_RecyclerView_tags"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Media -->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:contentDescription="needHelpPls"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_mein_profil" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Title, secondary and supporting text -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ticket-Titel"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna..."
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag A"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag B"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag C"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag D"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:text="4/5"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/helfen_RecyclerView_tickets"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
+                android:layout_height="match_parent"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="34dp"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/helfen_RecyclerView_tags" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Media -->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:contentDescription="needHelpPls"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_mein_profil" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Title, secondary and supporting text -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ticket-Titel"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna..."
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag A"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag B"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag C"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag D"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:text="4/5"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <!-- Media -->
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="194dp"
-                        android:contentDescription="needHelpPls"
-                        android:scaleType="centerCrop"
-                        app:srcCompat="@drawable/ic_mein_profil" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:padding="16dp">
-
-                        <!-- Title, secondary and supporting text -->
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Ticket-Titel"
-                            android:textAppearance="?attr/textAppearanceHeadline6" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="16dp"
-                            android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna..."
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag A"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag B"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag C"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="16dp"
-                                android:text="Tag D"
-                                android:textAppearance="?attr/textAppearanceBody2"
-                                android:textColor="?android:attr/textColorSecondary" />
-
-                        </LinearLayout>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="16dp"
-                            android:text="4/5"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="?android:attr/textColorSecondary" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-
-        </LinearLayout>
-    </ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:itemIconTint="@drawable/bottom_navbar_selector"
-        app:itemTextColor="@drawable/bottom_navbar_selector"
+        android:layout_height="@dimen/bottom_navbar_height"
+        app:itemIconSize="35dp"
+        app:itemIconTint="@drawable/bottom_navbar_selector_icon"
+        app:itemTextAppearanceActive="@style/bottom_nav_text_selected"
+        app:itemTextAppearanceInactive="@style/bottom_nav_text_unselected"
+        app:itemTextColor="@color/black"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_navigation" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

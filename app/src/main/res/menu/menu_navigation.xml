@@ -3,20 +3,20 @@
 
     <item
         android:id="@+id/hilfe_finden"
-        android:title="Hilfe finden"
+        android:title="@string/navbar_hilfe_finden"
         android:icon="@drawable/ic_hilfe_finden"/>
     <item
-        android:id="@+id/helfen"
-        android:title="Helfen"
+        android:id="@+id/TItel"
+        android:title="@string/navbar_helfen"
         android:icon="@drawable/ic_helfen"/>
 
     <item
         android:id="@+id/chats"
-        android:title="Chats"
+        android:title="@string/navbar_chats"
         android:icon="@drawable/ic_chats"/>
 
     <item
         android:id="@+id/mein_profil"
-        android:title="Mein Profil"
+        android:title="@string/navbar_mein_profil"
         android:icon="@drawable/ic_mein_profil"/>
 </menu>

@@ -1,6 +1,6 @@
 <resources>
     <!--Haupt App -->
-    <string name="app_name">CraftSquad</string>
+    <string name="app_name">crafted</string>
 
     <!-- Page Hilfe finden-->
     <string name="hilfe_finden_header">Hilfe finden</string>
@@ -54,5 +54,17 @@
     <string name="Password">Password</string>
     <string name="Login">Login</string>
     <string name="ForgetPass">Passwort vergessen</string>
+    <string name="text">Text</string>
+    <string name="home">Home</string>
+    <string name="todo">TODO</string>
+    <string name="ordne_dein_ticket_nun_abschlie_end_weiteren_themen_zu">Ordne dein Ticket nun abschließend weiteren Themen zu</string>
+    <string name="zur_ck">Zurück</string>
+    <string name="fast_geschafft">Fast Geschafft!</string>
+    <string name="neues_ticket">Neues Ticket</string>
+    <string name="weiter">Weiter</string>
+    <string name="navbar_mein_profil">Mein Profil</string>
+    <string name="navbar_chats">Chats</string>
+    <string name="navbar_helfen">Helfen</string>
+    <string name="navbar_hilfe_finden">Hilfe finden</string>
 
 </resources>

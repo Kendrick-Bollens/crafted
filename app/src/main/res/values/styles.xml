@@ -157,6 +157,17 @@
 
     </style>
 
+    <style name="bottom_nav_text_selected">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#081C15</item>
+    </style>
+
+    <style name="bottom_nav_text_unselected">
+        <item name="android:fontFamily">@font/poppins</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">#48524E</item>
+    </style>
 
 
 

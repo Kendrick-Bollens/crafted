@@ -2,6 +2,8 @@ package com.crafted;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -11,12 +13,17 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.crafted.customViews.hilfe_finden_profil_recyclerView_adapter;
+import com.crafted.customViews.profil_project_recyclerView_adapter;
+import com.crafted.customViews.profil_ticket_recyclerView_adapter;
 import com.crafted.external.RetrofitClient;
 import com.crafted.models.tag_model;
 import com.crafted.models.user_profile_model;
 import com.crafted.retrofit_interfaces.user_profile_interface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -89,6 +96,12 @@ public class mein_profil extends AppCompatActivity {
         TextView name = findViewById(R.id.mein_profil_name);
         name.setText(profil.getUser().getUsername());
 
+        TextView titel_tickets = findViewById(R.id.mein_profil_titel_ticket);
+        TextView titel_projekte = findViewById(R.id.mein_profil_titel_projekte);
+
+        titel_tickets.setText(profil.getUser().getUsername()+" Tickets");
+        titel_projekte.setText(profil.getUser().getUsername()+" Projekte");
+
         //set verified
         TextView verified = findViewById(R.id.mein_profil_verified);
         if (!profil.getUser().isVerified())
@@ -108,6 +121,17 @@ public class mein_profil extends AppCompatActivity {
         //set Beschreibung
         TextView beschreibung = findViewById(R.id.mein_profil_description);
         beschreibung.setText(profil.getUser().getDescription());
+
+        RecyclerView mein_profilRecyclerView_tickets = findViewById(R.id.mein_profil_tickets);
+
+        profil_ticket_recyclerView_adapter mein_profile_adapter_tickets = new profil_ticket_recyclerView_adapter(getApplicationContext(), profil.getTickets());
+        mein_profilRecyclerView_tickets.setAdapter(mein_profile_adapter_tickets);
+        mein_profilRecyclerView_tickets.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        RecyclerView mein_profilRecyclerView_projects = findViewById(R.id.mein_profil_projekte);
+        profil_project_recyclerView_adapter mein_profile_adapter_projects = new profil_project_recyclerView_adapter(getApplicationContext(), profil.getProjects());
+        mein_profilRecyclerView_projects.setAdapter(mein_profile_adapter_projects);
+        mein_profilRecyclerView_projects.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 
 
 

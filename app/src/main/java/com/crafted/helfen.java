@@ -1,10 +1,5 @@
 package com.crafted;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,14 +8,16 @@ import android.widget.CompoundButton;
 import android.widget.SearchView;
 import android.widget.ToggleButton;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.crafted.customViews.helfen_ticket_recyclerView_adapter;
-import com.crafted.customViews.hilfe_finden_profil_recyclerView_adapter;
 import com.crafted.external.RetrofitClient;
 import com.crafted.models.tag_model;
 import com.crafted.models.ticket_info_model;
-import com.crafted.models.user_profile_model;
 import com.crafted.retrofit_interfaces.ticket_info_interface;
-import com.crafted.retrofit_interfaces.user_profile_interface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.ArrayList;
@@ -48,7 +45,7 @@ public class helfen extends AppCompatActivity {
         setContentView(R.layout.activity_helfen);
 
         // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.TItel);
@@ -58,21 +55,20 @@ public class helfen extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.TItel:
                         return true;
                     case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.chats:
-                        startActivity(new Intent(getApplicationContext(),chats.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), chats.class));
+                        overridePendingTransition(0, 0);
                         return true;
                     case R.id.mein_profil:
-                        startActivity(new Intent(getApplicationContext(),mein_profil.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), mein_profil.class));
+                        overridePendingTransition(0, 0);
                         return true;
                 }
                 return false;
@@ -93,7 +89,7 @@ public class helfen extends AppCompatActivity {
         //generate Tickets
         loadTickets();
 
-        SearchView searchbar = (SearchView) findViewById(R.id.helfen_searchbar);
+        SearchView searchbar = findViewById(R.id.helfen_searchbar);
         searchbar.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -128,28 +124,25 @@ public class helfen extends AppCompatActivity {
             ticket_recyclerView.setAdapter(ticket_adapter);
             ticket_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
-        }else{
+        } else {
             RecyclerView ticket_recyclerView = findViewById(R.id.helfen_RecyclerView_tickets);
-            helfen_ticket_recyclerView_adapter ticket_adapter = new helfen_ticket_recyclerView_adapter(getApplicationContext(), ticketList,  new ArrayList<>(active_tags));
+            helfen_ticket_recyclerView_adapter ticket_adapter = new helfen_ticket_recyclerView_adapter(getApplicationContext(), ticketList, new ArrayList<>(active_tags));
             ticket_recyclerView.setAdapter(ticket_adapter);
             ticket_recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
 
         }
     }
 
-    private void addToggleListener(int id){
-        ToggleButton toggleButton =(ToggleButton) findViewById(id);
+    private void addToggleListener(int id) {
+        ToggleButton toggleButton = findViewById(id);
         toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked)
-                {
+                if (isChecked) {
                     active_tags.add(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
                     loadTickets();
-                }
-                else
-                {
+                } else {
                     active_tags.remove(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
                     loadTickets();
                 }
@@ -158,20 +151,20 @@ public class helfen extends AppCompatActivity {
         });
     }
 
-    private void loadTickets () {
+    private void loadTickets() {
         loadTickets("");
     }
 
-    private void loadTickets (String search) {
+    private void loadTickets(String search) {
         try {
 
             Call<List<ticket_info_model>> call;
             //Generate call to the RestAPI
             ticket_info_interface api = RetrofitClient.getRetrofitInstance().create(ticket_info_interface.class);
-            if(search=="")
+            if (search == "")
                 call = api.getTickets(RetrofitClient.getBearerToken());
             else
-                call = api.getTickets(RetrofitClient.getBearerToken(),search);
+                call = api.getTickets(RetrofitClient.getBearerToken(), search);
             call.enqueue(new Callback<List<ticket_info_model>>() {
 
                 private final ProgressDialog dialog = new ProgressDialog(helfen.this);
@@ -226,10 +219,6 @@ public class helfen extends AppCompatActivity {
 
         }
     }
-
-
-
-
 
 
 }

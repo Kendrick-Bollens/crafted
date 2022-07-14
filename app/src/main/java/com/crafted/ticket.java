@@ -33,7 +33,7 @@ public class ticket extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;

@@ -22,6 +22,151 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView3"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_SANITARY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_sanitaer"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Sanitär"
+                        android:textOn="Sanitär"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_ELECTRIC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_elektrik"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Elektrik"
+                        android:textOn="Elektrik"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_PAINTER"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_malerei"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Malerei"
+                        android:textOn="Malerei"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_MONTAGE"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_montage"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Montage"
+                        android:textOn="Montage"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_MOVING"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_umzug"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Umzug"
+                        android:textOn="Umzug"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_GARDENING"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_garten"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Garten"
+                        android:textOn="Garten"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_METAL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_metall"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Metall"
+                        android:textOn="Metall"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_WOOD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_holz"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Holz"
+                        android:textOn="Holz"
+                        android:textSize="13sp" />
+
+                    <ToggleButton
+                        android:id="@+id/hilfe_finden_tag_RENOVATION"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/toggle_button_selector"
+                        android:drawableLeft="@drawable/ic_tag_renovierung"
+                        android:fontFamily="@font/poppins"
+                        android:paddingLeft="9.5dp"
+                        android:textColor=" #524D48"
+                        android:textOff="Renovierung"
+                        android:textOn="Renovierung"
+                        android:textSize="13sp" />
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <TextView
                 android:id="@+id/TItel"
                 android:layout_width="wrap_content"
@@ -60,7 +205,7 @@
                 android:layout_marginEnd="14dp"
                 android:background="@drawable/searchbar"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/hilfe_finden_RecyclerView_tags"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/TItel">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -68,6 +213,7 @@
                     android:layout_height="match_parent">
 
                     <SearchView
+                        android:id="@+id/hilfe_finden_searchbar"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:iconifiedByDefault="false"
@@ -97,17 +243,6 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/hilfe_finden_RecyclerView_tags"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="14dp"
-                android:layout_marginEnd="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/hilfe_finden_RecyclerView_profiles"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -116,7 +251,7 @@
                 android:layout_marginEnd="14dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/hilfe_finden_RecyclerView_tags" />
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView3" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>

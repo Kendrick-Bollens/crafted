@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -19,7 +21,7 @@ public class ticket_erstellen5 extends AppCompatActivity {
         setContentView(R.layout.activity_ticket_erstellen5);
 
         // Initialize and assign variable
-        BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView= findViewById(R.id.bottom_navigation);
 
         // Set Home selected
         bottomNavigationView.setSelectedItemId(R.id.TItel);
@@ -35,7 +37,7 @@ public class ticket_erstellen5 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -54,8 +56,29 @@ public class ticket_erstellen5 extends AppCompatActivity {
 
         //make text
         String text = "<b>Super!</b> \nDein Ticket wurde \nerfolgreich erstellt.";
-        TextView textView =findViewById(R.id.bottom_navigation);
+        TextView textView =findViewById(R.id.ticket_erstellen5_text);
         textView.setText(Html.fromHtml(text));
+
+
+        Button button_home = findViewById(R.id.ticket_erstellen5_button_home);
+        button_home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //new intent
+                Intent intent = new Intent(view.getContext(), hilfe_finden.class);
+
+                //Retrieve bundle
+                Bundle bundle = getIntent().getExtras();
+
+                //update bundle
+                intent.putExtras(bundle);
+
+                //start next activity
+                view.getContext().startActivity(intent);
+
+
+            }
+        });
 
     }
 }

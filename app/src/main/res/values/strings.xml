@@ -40,12 +40,8 @@
     </string-array>
 
 
-    <string-array name="hilfe_finden_profil_tag">
-        <item>Holz</item>
-        <item>Statik</item>
-        <item>Sanitär</item>
-        <item>Metall</item>
-        <item>Elektrik</item>
+    <string-array name="tags">
+        SANITARY, WOOD, METAL, ELECTRIC, MOVING, PAINTER, RENOVATION, GARDENING, MONTAGE ]
     </string-array>
     <string name="title_activity_login">login</string>
 

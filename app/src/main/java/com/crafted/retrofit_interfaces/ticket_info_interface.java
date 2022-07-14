@@ -9,16 +9,17 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface ticket_info_interface {
 
-    @GET("users/profiles")
+    @GET("tickets/")
     public Call<List<ticket_info_model>> getTickets(@Header("Authorization") String authHeader);
 
-    @GET("users/profiles/{userid}")
-    public Call<List<ticket_info_model>> getTicketById(@Header("Authorization") String authHeader, @Path("userid") int id);
+    @GET("tickets/")
+    public Call<List<ticket_info_model>> getTickets(@Header("Authorization") String authHeader, @Query("search term") String searchterm);
 
-    @GET("users/profiles/my")
-    public Call<ticket_info_model> getMyTickets(@Header("Authorization") String authHeader);
+    @GET("tickets/{ticketid}")
+    public Call<List<ticket_info_model>> getTicketById(@Header("Authorization") String authHeader, @Path("ticketId") int id);
 
 }

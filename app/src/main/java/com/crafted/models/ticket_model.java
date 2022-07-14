@@ -9,10 +9,10 @@ public class ticket_model
     private String description;
     private String status;
     private Date createdDate;
-    private int userId;
-    private int assignedTo;
+    private Integer userId;
+    private Integer assignedTo;
 
-    public ticket_model(int id, String title, String description, String status, Date createdDate, int userId, int assignedTo) {
+    public ticket_model(int id, String title, String description, String status, Date createdDate, Integer userId, Integer assignedTo) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -26,55 +26,55 @@ public class ticket_model
         return id;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public Date getCreatedDate() {
-        return createdDate;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public int getAssignedTo() {
-        return assignedTo;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getStatus() {
+        return status;
     }
 
     public void setStatus(String status) {
         this.status = status;
     }
 
+    public Date getCreatedDate() {
+        return createdDate;
+    }
+
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
 
-    public void setUserId(int userId) {
+    public Integer getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
-    public void setAssignedTo(int assignedTo) {
+    public Integer getAssignedTo() {
+        return assignedTo;
+    }
+
+    public void setAssignedTo(Integer assignedTo) {
         this.assignedTo = assignedTo;
     }
 }

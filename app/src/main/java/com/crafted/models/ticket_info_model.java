@@ -6,13 +6,13 @@ public class ticket_info_model {
     private ticket_model ticket;
     private user_model user;
     private List<tag_model> tags;
-    private List<image_model> imageModelList;
+    private List<image_model> images;
 
     public ticket_info_model(ticket_model ticket, user_model user, List<tag_model> tags, List<image_model> imageModelList) {
         this.ticket = ticket;
         this.user = user;
         this.tags = tags;
-        this.imageModelList = imageModelList;
+        this.images = imageModelList;
     }
 
     public ticket_model getTicket() {
@@ -27,8 +27,8 @@ public class ticket_info_model {
         return tags;
     }
 
-    public List<image_model> getImageModelList() {
-        return imageModelList;
+    public List<image_model> getImages() {
+        return images;
     }
 
     public void setTicket(ticket_model ticket) {
@@ -43,7 +43,7 @@ public class ticket_info_model {
         this.tags = tags;
     }
 
-    public void setImageModelList(List<image_model> imageModelList) {
-        this.imageModelList = imageModelList;
+    public void setImages(List<image_model> images) {
+        this.images = images;
     }
 }

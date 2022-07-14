@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.textfield.TextInputLayout;
 
 public class ticket_erstellen2 extends AppCompatActivity {
 
@@ -36,7 +35,7 @@ public class ticket_erstellen2 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -60,6 +59,7 @@ public class ticket_erstellen2 extends AppCompatActivity {
                 //Retrieve bundle
                 Bundle bundle = getIntent().getExtras();
 
+
                 //new intent
                 Intent intent = new Intent(view.getContext(), ticket_erstellen3.class);
 
@@ -78,7 +78,7 @@ public class ticket_erstellen2 extends AppCompatActivity {
         });
 
         Button button_zurueck = (Button) findViewById(R.id.ticket_erstellen2_button_zurueck);
-        button_weiter.setOnClickListener(new View.OnClickListener() {
+        button_zurueck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Retrieve bundle

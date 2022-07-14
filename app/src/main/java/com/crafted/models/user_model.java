@@ -11,9 +11,10 @@ public class user_model {
     private boolean verified;
     private Date userCreateDate;
     private Date userLastModifiedDate;
-    private int profilePhotoId;
+    private Integer rating;
+    private Integer profilePhotoId;
 
-    public user_model(int id, String username, String description, String subject, boolean verified, Date userCreateDate, Date userLastModifiedDate, int profilePhotoId) {
+    public user_model(int id, String username, String description, String subject, boolean verified, Date userCreateDate, Date userLastModifiedDate, Integer rating, Integer profilePhotoId) {
         this.id = id;
         this.username = username;
         this.description = description;
@@ -21,7 +22,16 @@ public class user_model {
         this.verified = verified;
         this.userCreateDate = userCreateDate;
         this.userLastModifiedDate = userLastModifiedDate;
+        this.rating = rating;
         this.profilePhotoId = profilePhotoId;
+    }
+
+    public Integer getRating() {
+        return rating;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
     }
 
     public int getId() {
@@ -52,7 +62,7 @@ public class user_model {
         return userLastModifiedDate;
     }
 
-    public int getProfilePhotoId() {
+    public Integer getProfilePhotoId() {
         return profilePhotoId;
     }
 
@@ -84,7 +94,7 @@ public class user_model {
         this.userLastModifiedDate = userLastModifiedDate;
     }
 
-    public void setProfilePhotoId(int profilePhotoId) {
+    public void setProfilePhotoId(Integer profilePhotoId) {
         this.profilePhotoId = profilePhotoId;
     }
 }

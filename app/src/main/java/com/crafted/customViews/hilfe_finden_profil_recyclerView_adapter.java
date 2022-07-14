@@ -1,18 +1,22 @@
 package com.crafted.customViews;
 
 import android.content.Context;
+import android.os.AsyncTask;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crafted.R;
+import com.crafted.models.image_model;
 import com.crafted.models.tag_model;
 import com.crafted.models.user_profile_model;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,22 +48,61 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
 
     @Override
     public void onBindViewHolder(@NonNull hilfe_finden_profil_recyclerView_adapter.ProfilViewHolder holder, int position) {
-        List<tag_model> tagList = this.profilList.get(position).getTags();
+        user_profile_model profile = this.profilList.get(position);
 
-        holder.tvName.setText(this.profilList.get(position).getUser().getUsername());
-        holder.tvRating.setText("?/5");
-        holder.tvBeschreibung.setText(this.profilList.get(position).getUser().getDescription());
+        List<tag_model> tagList = profile.getTags();
 
+        String username = profile.getUser().getUsername();
+
+        String description = profile.getUser().getDescription();
+
+        Integer rating = profile.getUser().getRating();
+
+        image_model profilePhoto = profile.getProfilePhoto();
+
+
+
+        holder.tvName.setText(username);
+
+        //Verified
+        if (!profile.getUser().isVerified()) {
+            holder.tvVerified.setVisibility(View.GONE);
+        }
+
+        //Rating
+        if (rating == null)
+            holder.tvRating.setVisibility(View.GONE);
+        else
+            holder.tvRating.setText(rating + "/5");
+
+        //Beschreibung
+        if (description == "")
+            holder.tvBeschreibung.setVisibility(View.GONE);
+        else
+            holder.tvBeschreibung.setText(description);
+
+        //Image
+        if (profilePhoto != null)
+            Picasso.get().load(profilePhoto.getUrl()).into(holder.iVuserpicture);
+
+        //Tags
         String taglistString = "";
         for (int i = 0; i < tagList.size(); i++) {
-            if (i == 0) taglistString = tagList.get(i).toString();
-
-            if (this.active_tags_List.contains(tagList.get(i)))
+            if (i == 0)
+                if (this.active_tags_List.contains(tagList.get(i)))
+                    taglistString = "<b>" + tagList.get(i).toString() + "</b>";
+                else
+                    taglistString = tagList.get(i).toString();
+            else if (this.active_tags_List.contains(tagList.get(i)))
                 taglistString += ", <b>" + tagList.get(i).toString() + "</b>";
-            else taglistString += ", " + tagList.get(i).toString();
+            else
+                taglistString += ", " + tagList.get(i).toString();
 
         }
-        holder.tvTags.setText(Html.fromHtml(taglistString));
+        if (taglistString == "")
+            holder.tvTags.setVisibility(View.GONE);
+        else
+            holder.tvTags.setText(Html.fromHtml(taglistString));
 
 
     }
@@ -72,6 +115,7 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
     public static class ProfilViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvName, tvVerified, tvRating, tvBeschreibung, tvTags;
+        ImageView iVuserpicture;
 
         public ProfilViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -81,6 +125,18 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
             tvRating = itemView.findViewById(R.id.hilfe_finden_profil_rating);
             tvBeschreibung = itemView.findViewById(R.id.hilfe_finden_profil_beschreibung);
             tvTags = itemView.findViewById(R.id.hilfe_finden_profil_tags);
+            iVuserpicture = itemView.findViewById(R.id.mein_profil_photo_circle);
         }
     }
+
+
+    private class GetImageTask extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            return null;
+        }
+    }
+
+
 }

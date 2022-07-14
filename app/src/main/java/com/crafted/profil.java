@@ -20,7 +20,7 @@ public class profil extends AppCompatActivity {
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.hilfe_finden);
+        bottomNavigationView.setSelectedItemId(R.id.hilfe_finden_tag_MONTAGE);
 
         // Perform item selected listener
         bottomNavigationView.setOnItemSelectedListener(new BottomNavigationView.OnItemSelectedListener() {
@@ -32,7 +32,7 @@ public class profil extends AppCompatActivity {
                     case R.id.mein_profil:
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;

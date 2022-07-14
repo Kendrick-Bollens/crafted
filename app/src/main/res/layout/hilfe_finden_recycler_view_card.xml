@@ -29,7 +29,6 @@
                 android:rowCount="2">
 
                 <androidx.cardview.widget.CardView
-                    android:id="@+id/hilfe_finden_profil_image"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     app:cardCornerRadius="40dp"
@@ -39,11 +38,11 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
+                        android:id="@+id/mein_profil_photo_circle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/ic_mein_profil"
                         android:scaleType="centerCrop"
-                        />
+                        app:srcCompat="@drawable/ic_mein_profil" />
 
                 </androidx.cardview.widget.CardView>
 
@@ -58,13 +57,13 @@
                         android:id="@+id/hilfe_finden_profil_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Name Person"
+                        android:fontFamily="@font/poppins"
 
-                        android:textStyle="bold"
-                        android:lineSpacingExtra="-8sp"
-                        android:textAppearance="@style/hilfe_finden_card_name"
                         android:gravity="center_horizontal|center"
-                        />
+                        android:text="Name Person"
+                        android:textAppearance="@style/hilfe_finden_card_name"
+                        android:textColor=" #1C1208"
+                        android:textStyle="bold" />
 
 
                     <TextView
@@ -73,12 +72,11 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="8dp"
+                        android:drawableLeft="@drawable/ic_mein_profil_verifiziert"
                         android:drawablePadding="4dp"
-                        android:drawableLeft="@drawable/ic_verified"
-                        android:text="verfizierter Tag"
-                        android:textAppearance="@style/hilfe_finden_card_verified"
                         android:gravity="center_horizontal|center"
-                        />
+                        android:text="verfiziert"
+                        android:textAppearance="@style/hilfe_finden_card_verified" />
 
                     <TextView
                         android:id="@+id/hilfe_finden_profil_rating"
@@ -86,33 +84,44 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:layout_marginTop="9dp"
+                        android:drawableLeft="@drawable/ic_hilfe_finden_bewertung"
                         android:drawablePadding="4dp"
-                        android:drawableLeft="@drawable/ic_rating"
+                        android:gravity="center_horizontal|center"
                         android:text="0/5"
                         android:textAppearance="@style/hilfe_finden_card_rating"
-                        android:gravity="center_horizontal|center"
-                        />
+                        android:textColor=" #1C1208"
+                        android:textSize="13sp" />
                 </LinearLayout>
 
             </GridLayout>
 
-            <TextView
-                android:id="@+id/hilfe_finden_profil_beschreibung"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="29dp"
-                android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
-                android:textAppearance="@style/hilfe_finden_card_beschreibung"
-                android:gravity="top"
-                />
-
-            <TextView
-                android:id="@+id/hilfe_finden_profil_tags"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="Tag01 Tag02 Tag03 Tag04" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hilfe_finden_profil_beschreibung"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="29dp"
+                    android:fontFamily="@font/poppins"
+                    android:gravity="top"
+                    android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+                    android:textAppearance="@style/hilfe_finden_card_beschreibung"
+                    android:textColor=" #524D48" />
+
+                <TextView
+                    android:id="@+id/hilfe_finden_profil_tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="Tag01 Tag02 Tag03 Tag04"
+                    android:textColor="#524D48"
+                    android:textSize="13sp" />
+            </LinearLayout>
 
         </LinearLayout>
 

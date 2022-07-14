@@ -31,7 +31,7 @@ public class chats extends AppCompatActivity {
                 {
                     case R.id.chats:
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;

@@ -36,7 +36,7 @@ public class ticket_erstellen1 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -53,29 +53,49 @@ public class ticket_erstellen1 extends AppCompatActivity {
             }
         });
 
+        try {
+            if (getIntent().getExtras() != null) {
+                TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen1_input_field_name);
+                String ticket_name = getIntent().getExtras().getString("ticket_name");
+                textInputLayout.getEditText().setText(ticket_name);
+
+
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         Button button1 = (Button) findViewById(R.id.ticket_erstellen1_button_weiter);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Retrieve bundle
-                Bundle bundle = getIntent().getExtras();
+                    //get the text Input Layout
+                    TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen1_input_field_name);
+                    //Retrieve Ticket name
+                    String ticket_name = textInputLayout.getEditText().getText().toString();
+                    if (ticket_name.isEmpty()) {
+                        textInputLayout.setError("You need to enter a name");
+                    } else {
 
-                //new intent
-                Intent intent = new Intent(view.getContext(), ticket_erstellen2.class);
+                        //Retrieve bundle
+                        Bundle bundle = getIntent().getExtras();
+                        if(bundle == null)
+                            bundle = new Bundle();
 
-                //Retrieve Ticket name
-                TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen1_input_field_name);
-                String ticket_name = textInputLayout.getEditText().getText().toString();
+                        //new intent
+                        Intent intent = new Intent(view.getContext(), ticket_erstellen2.class);
 
-                //add new ticket name
-                bundle.putString("ticket_name", ticket_name);
+                        //add new ticket name
+                        bundle.putString("ticket_name", ticket_name);
 
-                //update bundle
-                intent.putExtras(bundle);
+                        //update bundle
+                        intent.putExtras(bundle);
 
-                //start next activity
-                view.getContext().startActivity(intent);
+                        //start next activity
+                        view.getContext().startActivity(intent);
+
+                    }
+
             }
         });
 

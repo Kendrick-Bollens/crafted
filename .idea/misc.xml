@@ -7,20 +7,39 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/bottom_navbar_selector.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/bottom_navbar_selector_icon.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/button_ticket_erstellen.xml" value="0.386" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/filter_background.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/helfen_radiobutton.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/helfen_radiobutton_selected.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/helfen_sort_selector.xml" value="0.273" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_baseline_build_24.xml" value="0.314" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_chats.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_helfen.xml" value="0.386" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_helfen_bewertung.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_hilfe_finden_bewertung.xml" value="0.293" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_hilfe_finden_verifiziert.xml" value="0.293" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_logo.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_mein_profil.xml" value="0.314" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_mein_profil_bearbeiten.xml" value="0.293" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_progress_1.xml" value="0.314" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_progress_2.xml" value="0.314" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_progress_3.xml" value="0.314" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_progress_4.xml" value="0.314" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_elektrik.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_garten.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_holz.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_malerei.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_metall.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_renovierung.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_sanitaer.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_tag_umzug.xml" value="0.273" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_beschreiben.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_erledigt.xml" value="0.314" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_erstellen.xml" value="0.273" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_name.xml" value="0.273" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_progress_1.xml" value="0.314" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_progress_4.xml" value="0.386" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_verified.xml" value="0.293" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/input_field_ticket_erstellen_1.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/login_button_testlogin.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/login_inputfield.xml" value="0.313" />
@@ -29,9 +48,9 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/toggle_button_selector.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/toggle_button_unselected.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_chats.xml" value="0.5" />
-        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_helfen.xml" value="0.25" />
-        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_hilfe_finden.xml" value="0.33" />
-        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_login.xml" value="0.55" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_helfen.xml" value="0.4913194444444444" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_hilfe_finden.xml" value="0.47066090179122916" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_login.xml" value="0.33" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_mein_profil.xml" value="0.5" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_profil.xml" value="0.3109375" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket.xml" value="0.3109375" />
@@ -43,6 +62,11 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/helfen_recycler_view_card.xml" value="0.55" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/helfen_recycler_view_tags.xml" value="0.3109375" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/hilfe_finden_recycler_view_card.xml" value="0.55" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/hilfe_finden_recycler_view_tags.xml" value="0.4046875" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/mein_profil_recycler_view.xml" value="0.4140625" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/mein_profil_recycler_view_projekt.xml" value="0.4140625" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/profil_recycler_view_projekt.xml" value="0.9" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/profil_recycler_view_ticket.xml" value="0.75" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/menu/menu_navigation.xml" value="0.55" />
       </map>
     </option>

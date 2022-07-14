@@ -9,11 +9,16 @@ import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface user_profile_interface {
 
     @GET("users/profiles")
-    public Call<List<user_profile_model>> getUser(@Header("Authorization") String authHeader);
+    public Call<List<user_profile_model>> getUsers(@Header("Authorization") String authHeader);
+
+    @GET("users/profiles")
+    public Call<List<user_profile_model>> getUsers(@Header("Authorization") String authHeader, @Query("searchTerm") String search);
+
 
     @GET("users/profiles/{userid}")
     public Call<List<user_profile_model>> getUserById(@Header("Authorization") String authHeader, @Path("userid") int id);

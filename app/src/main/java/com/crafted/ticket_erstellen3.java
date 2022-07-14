@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.textfield.TextInputLayout;
 
 public class ticket_erstellen3 extends AppCompatActivity {
 
@@ -35,7 +36,7 @@ public class ticket_erstellen3 extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), mein_profil.class));
                         overridePendingTransition(0,0);
                         return true;
-                    case R.id.hilfe_finden:
+                    case R.id.hilfe_finden_tag_MONTAGE:
                         startActivity(new Intent(getApplicationContext(), hilfe_finden.class));
                         overridePendingTransition(0,0);
                         return true;
@@ -52,51 +53,85 @@ public class ticket_erstellen3 extends AppCompatActivity {
             }
         });
 
+        try {
+            if (getIntent().getExtras() != null) {
+                TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen3_input_field_beschreibung);
+                String ticket_beschreibung = getIntent().getExtras().getString("ticket_beschreibung");
+                textInputLayout.getEditText().setText(ticket_beschreibung);
+
+
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
         Button button_weiter = (Button) findViewById(R.id.ticket_erstellen3_button_weiter);
         button_weiter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Retrieve bundle
-                Bundle bundle = getIntent().getExtras();
-
-                //new intent
-                Intent intent = new Intent(view.getContext(), ticket_erstellen3.class);
-
+               //get the text Input Layout
+                TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen3_input_field_beschreibung);
                 //Retrieve Ticket name
-                String ticket_bild_url = "";
+                String ticket_beschreibung = textInputLayout.getEditText().getText().toString();
+                if (ticket_beschreibung.isEmpty()) {
+                    textInputLayout.setError("You need to enter a description");
+                } else {
 
-                //add new ticket name
-                bundle.putString("ticket_bild_url", ticket_bild_url);
+                    //Retrieve bundle
+                    Bundle bundle = getIntent().getExtras();
 
-                //update bundle
-                intent.putExtras(bundle);
+                    //new intent
+                    Intent intent = new Intent(view.getContext(), ticket_erstellen4.class);
 
-                //start next activity
-                view.getContext().startActivity(intent);
+                    //add new ticket name
+                    bundle.putString("ticket_beschreibung", ticket_beschreibung);
+
+                    //update bundle
+                    intent.putExtras(bundle);
+
+                    //start next activity
+                    view.getContext().startActivity(intent);
+
+                }
             }
         });
 
         Button button_zurueck = (Button) findViewById(R.id.ticket_erstellen3_button_zurueck);
-        button_weiter.setOnClickListener(new View.OnClickListener() {
+        button_zurueck.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Retrieve bundle
-                Bundle bundle = getIntent().getExtras();
-
                 //new intent
-                Intent intent = new Intent(view.getContext(), ticket_erstellen1.class);
+                Intent intent = new Intent(view.getContext(), ticket_erstellen2.class);
 
+                //get the text Input Layout
+                TextInputLayout textInputLayout = findViewById(R.id.ticket_erstellen3_input_field_beschreibung);
                 //Retrieve Ticket name
-                String ticket_bild_url = "";
+                String ticket_beschreibung = textInputLayout.getEditText().getText().toString();
+                if (ticket_beschreibung.isEmpty()) {
 
-                //add new ticket name
-                bundle.putString("ticket_bild_url", ticket_bild_url);
+                    //Retrieve bundle
+                    Bundle bundle = getIntent().getExtras();
 
-                //update bundle
-                intent.putExtras(bundle);
+                    //update bundle
+                    intent.putExtras(bundle);
 
-                //start next activity
-                view.getContext().startActivity(intent);
+                    //start next activity
+                    view.getContext().startActivity(intent);
+
+                } else {
+                    Bundle bundle = new Bundle();
+
+                    //add new ticket name
+                    bundle.putString("ticket_beschreibung", ticket_beschreibung);
+
+                    //update bundle
+                    intent.putExtras(bundle);
+
+                    //start next activity
+                    view.getContext().startActivity(intent);
+
+                }
+
             }
         });
     }

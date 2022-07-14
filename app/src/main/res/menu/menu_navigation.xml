@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/hilfe_finden"
+        android:id="@+id/hilfe_finden_tag_MONTAGE"
         android:title="@string/navbar_hilfe_finden"
         android:icon="@drawable/ic_hilfe_finden"/>
     <item

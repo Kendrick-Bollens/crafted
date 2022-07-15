@@ -1,7 +1,9 @@
 package com.crafted.customViews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Bundle;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,12 +12,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.crafted.mein_profil;
+import com.crafted.profil;
+
 import com.crafted.R;
+import com.crafted.hilfe_finden;
 import com.crafted.models.image_model;
 import com.crafted.models.tag_model;
 import com.crafted.models.user_profile_model;
+import com.crafted.ticket_erstellen2;
+import com.google.android.material.textfield.TextInputLayout;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -104,7 +113,22 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
         else
             holder.tvTags.setText(Html.fromHtml(taglistString));
 
+        holder.body.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //new intent
+                Intent intent = new Intent(view.getContext(), profil.class);
 
+                intent.putExtra("id",profile.getUser().getId());
+
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+
+
+            }
+        });
     }
 
     @Override
@@ -116,6 +140,7 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
 
         TextView tvName, tvVerified, tvRating, tvBeschreibung, tvTags;
         ImageView iVuserpicture;
+        CardView body;
 
         public ProfilViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -126,6 +151,8 @@ public class hilfe_finden_profil_recyclerView_adapter extends RecyclerView.Adapt
             tvBeschreibung = itemView.findViewById(R.id.hilfe_finden_profil_beschreibung);
             tvTags = itemView.findViewById(R.id.hilfe_finden_profil_tags);
             iVuserpicture = itemView.findViewById(R.id.mein_profil_photo_circle);
+
+            body = itemView.findViewById(R.id.card_body);
         }
     }
 

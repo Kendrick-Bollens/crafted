@@ -13,15 +13,23 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.crafted.customViews.hilfe_finden_profil_recyclerView_adapter;
 import com.crafted.customViews.profil_project_recyclerView_adapter;
 import com.crafted.customViews.profil_ticket_recyclerView_adapter;
 import com.crafted.external.RetrofitClient;
+import com.crafted.models.tag_model;
 import com.crafted.models.user_profile_model;
 import com.crafted.retrofit_interfaces.user_profile_interface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.TimeZone;
 
 import retrofit2.Call;
@@ -71,58 +79,60 @@ public class profil extends AppCompatActivity {
             }
         });
 
-        //:TODO
+        int id = getIntent().getExtras().getInt("id");
 
-        loadProfile(getIntent().getExtras().getInt("id"));
+        //Lade die Daten
+        loadProfile(id);
+
 
 
     }
 
     private void updateProfil(user_profile_model profil){
         this.profil = profil;
-        ImageView profilphoto = findViewById(R.id.mein_profil_photo);
+        ImageView profilphoto = findViewById(R.id.profil_photo);
 
         //set Profile Photo
         if(profil.getProfilePhoto() != null)
             Picasso.get().load(profil.getProfilePhoto().getUrl()).into(profilphoto);
 
         //set Name
-        TextView name = findViewById(R.id.mein_profil_name);
+        TextView name = findViewById(R.id.profil_name);
         name.setText(profil.getUser().getUsername());
 
-        TextView titel_tickets = findViewById(R.id.mein_profil_titel_ticket);
-        TextView titel_projekte = findViewById(R.id.mein_profil_titel_projekte);
+        TextView titel_tickets = findViewById(R.id.profil_titel_ticket);
+        TextView titel_projekte = findViewById(R.id.profil_titel_projekte);
 
-        titel_tickets.setText(profil.getUser().getUsername()+" Tickets");
-        titel_projekte.setText(profil.getUser().getUsername()+" Projekte");
+        titel_tickets.setText(profil.getUser().getUsername()+"s Tickets");
+        titel_projekte.setText(profil.getUser().getUsername()+"s Projekte");
 
         //set verified
-        TextView verified = findViewById(R.id.mein_profil_verified);
+        TextView verified = findViewById(R.id.profil_verified);
         if (!profil.getUser().isVerified())
             verified.setVisibility(View.GONE);
 
         //set Mitglied seit Yahr
-        TextView mitgliedseit = findViewById(R.id.mein_profil_mitglieddauer);
+        TextView mitgliedseit = findViewById(R.id.profil_mitglieddauer);
         Calendar cal = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
         cal.setTime(profil.getUser().getUserCreateDate());
         mitgliedseit.setText("Mitglied seit "+cal.get(Calendar.YEAR));
 
         //set Rating
-        TextView rating = findViewById(R.id.mein_profil_rating);
+        TextView rating = findViewById(R.id.profil_rating);
         rating.setText(profil.getUser().getRating()+"/5");
 
 
         //set Beschreibung
-        TextView beschreibung = findViewById(R.id.mein_profil_description);
+        TextView beschreibung = findViewById(R.id.profil_description);
         beschreibung.setText(profil.getUser().getDescription());
 
-        RecyclerView mein_profilRecyclerView_tickets = findViewById(R.id.mein_profil_tickets);
+        RecyclerView mein_profilRecyclerView_tickets = findViewById(R.id.profil_tickets);
 
         profil_ticket_recyclerView_adapter mein_profile_adapter_tickets = new profil_ticket_recyclerView_adapter(getApplicationContext(), profil.getTickets());
         mein_profilRecyclerView_tickets.setAdapter(mein_profile_adapter_tickets);
         mein_profilRecyclerView_tickets.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
 
-        RecyclerView mein_profilRecyclerView_projects = findViewById(R.id.mein_profil_projekte);
+        RecyclerView mein_profilRecyclerView_projects = findViewById(R.id.profil_projekte);
         profil_project_recyclerView_adapter mein_profile_adapter_projects = new profil_project_recyclerView_adapter(getApplicationContext(), profil.getProjects());
         mein_profilRecyclerView_projects.setAdapter(mein_profile_adapter_projects);
         mein_profilRecyclerView_projects.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false));
@@ -154,6 +164,7 @@ public class profil extends AppCompatActivity {
                         //Get all Profiles
                         profil = response.body();
 
+                        System.out.println("Hi");
                         updateProfil(profil);
 
                         if (dialog.isShowing()) {
@@ -162,6 +173,7 @@ public class profil extends AppCompatActivity {
 
                     } catch (Exception e) {
                         System.out.println("Error: " + e);
+                        e.printStackTrace();
                     }
 
                 }
@@ -182,4 +194,5 @@ public class profil extends AppCompatActivity {
 
         }
     }
+
 }

@@ -19,7 +19,7 @@ public interface ticket_info_interface {
     @GET("tickets/")
     public Call<List<ticket_info_model>> getTickets(@Header("Authorization") String authHeader, @Query("search term") String searchterm);
 
-    @GET("tickets/{ticketid}")
-    public Call<List<ticket_info_model>> getTicketById(@Header("Authorization") String authHeader, @Path("ticketId") int id);
+    @GET("tickets/{ticketId}")
+    public Call<ticket_info_model> getTicketById(@Header("Authorization") String authHeader, @Path("ticketId") int id);
 
 }

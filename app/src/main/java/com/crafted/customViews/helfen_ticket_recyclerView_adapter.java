@@ -1,6 +1,7 @@
 package com.crafted.customViews;
 
 import android.content.Context;
+import android.content.Intent;
 import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,16 +10,25 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crafted.R;
+import com.crafted.external.RetrofitClient;
 import com.crafted.models.image_model;
 import com.crafted.models.tag_model;
 import com.crafted.models.ticket_info_model;
+import com.crafted.profil;
+import com.crafted.retrofit_interfaces.image_interface;
+import com.crafted.ticket;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<helfen_ticket_recyclerView_adapter.TicketViewHolder> {
 
@@ -63,7 +73,7 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
 
         String username = "";
 
-        String rating = "";
+        String rating = ticket_info.getUser().getRating()+"/5";
 
 
         if(ticket_info.getUser() != null) {
@@ -99,9 +109,7 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
         else
             holder.tvBeschreibung.setText(description);
 
-        //ProfilePhoto
-        if (userphoto != null)
-            Picasso.get().load(userphoto.getUrl()).into(holder.iVuserpicture);
+
 
         //Ticket Bild
         if ( bild != null)
@@ -129,6 +137,48 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
             holder.tvTags.setText(Html.fromHtml(taglistString));
 
 
+        //Generate call to the RestAPI
+        image_interface api = RetrofitClient.getRetrofitInstance().create(image_interface.class);
+        Call<image_model> call = api.getImageById(RetrofitClient.getBearerToken(),ticket_info.getUser().getProfilePhotoId());
+        call.enqueue(new Callback<image_model>() {
+
+
+            @Override
+            public void onResponse(Call<image_model> call, Response<image_model> response) {
+
+                image_model image = response.body();
+
+                Picasso.get().load(image.getUrl()).into(holder.iVuserpicture);
+
+
+
+            }
+
+            @Override
+            public void onFailure(Call<image_model> call, Throwable t) {
+                //Handle failure
+                System.out.println(t);
+
+            }
+
+
+        });
+
+
+        holder.cvBody.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //new intent
+                Intent intent = new Intent(view.getContext(), ticket.class);
+
+                intent.putExtra("id",ticket_info.getTicket().getId());
+
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     @Override
@@ -140,6 +190,7 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
 
         TextView tvName, tvTitel, tvRating, tvBeschreibung, tvTags;
         ImageView ivBild, iVuserpicture;
+        CardView cvBody;
 
         public TicketViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -152,6 +203,8 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
 
             ivBild = itemView.findViewById(R.id.helfen_card_Bild);
             iVuserpicture = itemView.findViewById(R.id.helfen_card_Profilbild);
+
+            cvBody = itemView.findViewById(R.id.helfen_card_body);
         }
     }
 }

@@ -7,16 +7,16 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="14dp"
         android:layout_marginBottom="14dp"
-        app:contentPaddingTop="11dp"
+        app:cardCornerRadius="15dp"
+        app:contentPaddingBottom="24dp"
         app:contentPaddingLeft="11dp"
         app:contentPaddingRight="16dp"
-        app:contentPaddingBottom="24dp"
-        app:cardCornerRadius="15dp"
-        >
+        app:contentPaddingTop="11dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,8 +49,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="9dp"
                     android:orientation="vertical">
 
                     <TextView

@@ -99,8 +99,8 @@ public class mein_profil extends AppCompatActivity {
         TextView titel_tickets = findViewById(R.id.mein_profil_titel_ticket);
         TextView titel_projekte = findViewById(R.id.mein_profil_titel_projekte);
 
-        titel_tickets.setText(profil.getUser().getUsername()+" Tickets");
-        titel_projekte.setText(profil.getUser().getUsername()+" Projekte");
+        titel_tickets.setText(profil.getUser().getUsername()+"s Tickets");
+        titel_projekte.setText(profil.getUser().getUsername()+"s Projekte");
 
         //set verified
         TextView verified = findViewById(R.id.mein_profil_verified);

@@ -139,13 +139,16 @@ public class hilfe_finden extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked)
                 {
+                    SearchView searchbar = (SearchView) findViewById(R.id.hilfe_finden_searchbar);
+
                     active_tags.add(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
-                    loadProfiles();
+                    loadProfiles(searchbar.getQuery().toString());
                 }
                 else
                 {
+                    SearchView searchbar = (SearchView) findViewById(R.id.hilfe_finden_searchbar);
                     active_tags.remove(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
-                    loadProfiles();
+                    loadProfiles(searchbar.getQuery().toString());
                 }
 
             }
@@ -165,6 +168,8 @@ public class hilfe_finden extends AppCompatActivity {
             hilfe_finden_profil_recyclerView_adapter profile_adapter = new hilfe_finden_profil_recyclerView_adapter(getApplicationContext(), active_profiles_list, new ArrayList<>(active_tags));
             profilRecyclerView.setAdapter(profile_adapter);
             profilRecyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+
 
             }else{
                 RecyclerView profilRecyclerView = findViewById(R.id.hilfe_finden_RecyclerView_profiles);

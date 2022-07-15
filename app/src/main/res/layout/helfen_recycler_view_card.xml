@@ -7,13 +7,13 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/helfen_card_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="14dp"
-        android:layout_marginBottom="14dp"
 
-        app:cardCornerRadius="15dp"
-        >
+        android:layout_marginBottom="14dp"
+        app:cardCornerRadius="15dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,11 +30,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:paddingTop="16dp"
-                android:paddingHorizontal="15dp"
-                android:paddingBottom="24dp"
                 android:orientation="vertical"
-                >
+                android:paddingHorizontal="15dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="24dp">
 
                 <TextView
                     android:id="@+id/helfen_card_Titel"
@@ -136,12 +135,7 @@
             </LinearLayout>
 
 
-
-
         </LinearLayout>
-
-
-
 
 
     </androidx.cardview.widget.CardView>

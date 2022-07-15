@@ -141,10 +141,13 @@ public class helfen extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     active_tags.add(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
-                    loadTickets();
+                    SearchView searchbar = findViewById(R.id.helfen_searchbar);
+
+                    loadTickets(searchbar.getQuery().toString());
                 } else {
                     active_tags.remove(tag_model.getEnumOf(toggleButton.getTextOff().toString()));
-                    loadTickets();
+                    SearchView searchbar = findViewById(R.id.helfen_searchbar);
+                    loadTickets(searchbar.getQuery().toString());
                 }
 
             }
@@ -189,7 +192,15 @@ public class helfen extends AppCompatActivity {
                         Set<tag_model> unique_tags_set = new HashSet<tag_model>(all_tags_list);
                         unique_tags_list = new ArrayList<>(unique_tags_set);
 
-                        updateTicketCards(ticketList);
+
+                        List<ticket_info_model> notdoneticketList = new ArrayList<ticket_info_model>();
+                        for (int i = 0; i < ticketList.size(); i++) {
+                            if(!ticketList.get(i).getTicket().getStatus().equals("DONE"))
+                                notdoneticketList.add(ticketList.get(i));
+                        }
+
+
+                        updateTicketCards(notdoneticketList);
 
 
                         if (dialog.isShowing()) {

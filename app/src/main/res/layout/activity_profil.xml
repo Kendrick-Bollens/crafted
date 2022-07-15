@@ -7,14 +7,16 @@
     android:background="#FAF6F3"
     tools:context=".profil">
 
-    <androidx.core.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/bottom_navbar_height"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -22,7 +24,7 @@
             android:layout_height="match_parent">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/mein_profil_photo_circle"
+                android:id="@+id/profil_photo_circle"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_marginStart="24dp"
@@ -32,7 +34,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/profil_bild"
+                    android:id="@+id/profil_photo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:contentDescription="TODO"
@@ -47,9 +49,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="19dp"
                 android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins"
                 android:text="Frau Herr"
                 android:textColor="#1C1B1F"
-                app:layout_constraintStart_toEndOf="@+id/mein_profil_photo_circle"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/profil_photo_circle"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -61,13 +66,13 @@
                 android:drawableLeft="@drawable/ic_mein_profil_verifiziert"
                 android:drawablePadding="5dp"
                 android:fontFamily="@font/poppins"
-                android:text="verifizierter Mensch"
+                android:text="verifiziert"
                 android:textColor="#1C1208"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mein_profil_photo_circle" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_photo_circle" />
 
             <TextView
-                android:id="@+id/mein_profil_mitglieddauer"
+                android:id="@+id/profil_mitglieddauer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -81,7 +86,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/profil_verified" />
 
             <TextView
-                android:id="@+id/mein_profil_rating"
+                android:id="@+id/profil_rating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -92,12 +97,12 @@
                 android:text="1/5"
                 android:textColor="#1C1208 "
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mein_profil_mitglieddauer" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_mitglieddauer" />
 
             <TextView
-                android:id="@+id/mein_profil_description"
+                android:id="@+id/profil_description"
                 android:layout_width="360dp"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="24dp"
@@ -107,10 +112,10 @@
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mein_profil_rating" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_rating" />
 
             <TextView
-                android:id="@+id/mein_profil_titel_ticket"
+                android:id="@+id/profil_titel_ticket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="29dp"
@@ -120,21 +125,20 @@
                 android:textColor="#1C1208"
                 android:textSize="19sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/mein_profil_description" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_description" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mein_profil_tickets"
+                android:id="@+id/profil_tickets"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
                 android:layout_marginTop="17dp"
-                android:layout_marginEnd="14dp"
+                android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_titel_ticket" />
 
             <TextView
-                android:id="@+id/mein_profil_titel_projekte"
+                android:id="@+id/profil_titel_projekte"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="29dp"
@@ -144,21 +148,22 @@
                 android:textColor="#1C1208"
                 android:textSize="19sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mein_profil_tickets" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_tickets" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/mein_profil_projekte"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="24dp"
+                android:id="@+id/profil_projekte"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="17dp"
-                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/mein_profil_titel_projekte" />
+                app:layout_constraintTop_toBottomOf="@+id/profil_titel_projekte" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -174,4 +179,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/menu_navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

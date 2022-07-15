@@ -11,6 +11,11 @@ public class image_model {
         this.altText = altText;
     }
 
+    public image_model( String url, String altText) {
+        this.url = url;
+        this.altText = altText;
+    }
+
     public int getId() {
         return id;
     }

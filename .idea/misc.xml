@@ -38,11 +38,13 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_erstellen.xml" value="0.273" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_name.xml" value="0.273" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_progress_1.xml" value="0.314" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_progress_2.xml" value="0.213" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_ticket_progress_4.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ic_verified.xml" value="0.293" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/input_field_ticket_erstellen_1.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/login_button_testlogin.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/login_inputfield.xml" value="0.313" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ticket_erstellen_bild_bg.xml" value="0.213" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ticket_erstellen_button_large.xml" value="0.1985" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ticket_erstellen_button_small.xml" value="0.386" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/drawable/ticket_user_kontaktieren_button.xml" value="0.1985" />
@@ -57,7 +59,7 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_profil.xml" value="0.5" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket.xml" value="0.1" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen1.xml" value="0.5" />
-        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen2.xml" value="0.6254237288135593" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen2.xml" value="0.33" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen3.xml" value="0.55" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen4.xml" value="0.9" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/activity_ticket_erstellen5.xml" value="0.55" />
@@ -69,6 +71,7 @@
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/mein_profil_recycler_view_projekt.xml" value="0.4140625" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/profil_recycler_view_projekt.xml" value="0.67" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/profil_recycler_view_ticket.xml" value="0.5" />
+        <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/ticket_erstellen_recycler_view_card.xml" value="0.5405128205128205" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/layout/ticket_recycler_view_image.xml" value="0.67" />
         <entry key="..\:/Users/kendr/AndroidStudioProjects/crafted/app/src/main/res/menu/menu_navigation.xml" value="0.55" />
       </map>

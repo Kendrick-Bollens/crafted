@@ -10,8 +10,21 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
+import com.crafted.external.RetrofitClient;
+import com.crafted.models.image_model;
+import com.crafted.models.tag_model;
+import com.crafted.models.ticket_post_model;
+import com.crafted.models.user_profile_model;
+import com.crafted.retrofit_interfaces.ticket_info_interface;
+import com.crafted.retrofit_interfaces.user_profile_interface;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import retrofit2.Call;
 
 public class ticket_erstellen5 extends AppCompatActivity {
 
@@ -58,6 +71,58 @@ public class ticket_erstellen5 extends AppCompatActivity {
         String text = "<b>Super!</b> \nDein Ticket wurde \nerfolgreich erstellt.";
         TextView textView =findViewById(R.id.ticket_erstellen5_text);
         textView.setText(Html.fromHtml(text));
+
+        Bundle bundle = getIntent().getExtras();
+
+        String url = bundle.getString("image_url");
+        String altText = bundle.getString("alt_text");
+
+        List<image_model> images = new ArrayList<image_model>();
+
+        images.add(new image_model(url,altText));
+
+        List<tag_model> tags = new ArrayList<tag_model>();
+
+        if(bundle.getBoolean("ELECTRIC"))
+            tags.add(tag_model.ELECTRIC);
+
+        if(bundle.getBoolean("GARDENING"))
+            tags.add(tag_model.GARDENING);
+
+
+        if(bundle.getBoolean("METAL"))
+            tags.add(tag_model.METAL);
+
+
+        if(bundle.getBoolean("MONTAGE"))
+            tags.add(tag_model.MONTAGE);
+
+
+        if( bundle.getBoolean("MOVING"))
+            tags.add(tag_model.MOVING);
+
+
+        if(bundle.getBoolean("PAINTER"))
+            tags.add(tag_model.PAINTER);
+
+
+        if(bundle.getBoolean("RENOVATION"))
+            tags.add(tag_model.RENOVATION);
+
+
+        if(bundle.getBoolean("WOOD"))
+            tags.add(tag_model.WOOD);
+
+
+        if( bundle.getBoolean("SANITARY"))
+            tags.add(tag_model.SANITARY);
+
+
+
+        ticket_post_model new_ticket = new ticket_post_model(bundle.getString("ticket_name"), bundle.getString("ticket_beschreibung"),tags,images);
+
+        ticket_info_interface api = RetrofitClient.getRetrofitInstance().create(ticket_info_interface.class);
+        api.createTicket(RetrofitClient.getBearerToken(),new_ticket);
 
 
         Button button_home = findViewById(R.id.ticket_erstellen5_button_home);

@@ -23,6 +23,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_ticket_progress_2"
+        tools:layout_editor_absoluteX="321dp"
+        tools:layout_editor_absoluteY="50dp" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -39,15 +47,99 @@
             android:layout_height="wrap_content">
 
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="15dp"
+            <androidx.cardview.widget.CardView
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+                android:layout_marginHorizontal="14dp"
+
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_A"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+                android:layout_marginHorizontal="14dp"
+
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_ticket_progress_2" />
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_B"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="15dp"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="24dp">
+
+                    <TextView
+                        android:id="@+id/ticket_card_Titel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="top"
+                        android:text="Titel"
+                        android:textAppearance="@style/helfen_card_Titel"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/ticket_card_Beschreibung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="top"
+                        android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
+                        android:textAppearance="@style/helfen_card_Beschrebung"
+                        android:textColor="#524D48" />
+
+                    <TextView
+                        android:id="@+id/ticket_card_tags"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginTop="12dp"
+                        android:fontFamily="@font/poppins"
+                        android:gravity="top"
+                        android:text="Tag A, Tag B, Tag C"
+                        android:textAppearance="@style/helfen_card_tags"
+                        android:textColor="#524D48" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -103,34 +195,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ticket_erstellen2_button_bild_hunzufuegen" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/ticket_erstellen2_recyclerView_test_bilder"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="14dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7"
-                app:spanCount="2" />
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/ticket_erstellen2_button_weiter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="14dp"
-        android:background="@drawable/ticket_erstellen_button_small"
-        android:fontFamily="@font/roboto"
-        android:text="Weiter"
-        android:textColor=" #FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/ticket_erstellen2_button_zurueck"

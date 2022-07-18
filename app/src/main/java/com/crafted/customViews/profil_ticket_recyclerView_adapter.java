@@ -74,6 +74,8 @@ public class profil_ticket_recyclerView_adapter extends RecyclerView.Adapter<pro
 
         if(ticket_info.getImages() != null && !ticket_info.getImages().isEmpty())
             Picasso.get().load(ticket_info.getImages().get(0).getUrl()).into(holder.bild);
+        else
+            Picasso.get().load("https://ualr.edu/elearning/files/2020/10/No-Photo-Available.jpg").into(holder.bild);
     }
 
     @Override

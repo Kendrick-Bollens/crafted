@@ -114,6 +114,8 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
         //Ticket Bild
         if ( bild != null)
             Picasso.get().load(bild.getUrl()).into(holder.ivBild);
+        else
+            Picasso.get().load("https://ualr.edu/elearning/files/2020/10/No-Photo-Available.jpg").into(holder.ivBild);
 
 
         //Tags

@@ -8,24 +8,19 @@
     tools:context=".ticket_erstellen3">
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="14dp"
         android:fontFamily="@font/poppins"
         android:text="Neues Ticket"
         android:textColor="#1B4332"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imageView"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
@@ -35,7 +30,6 @@
         app:srcCompat="@drawable/ic_ticket_progress_3" />
 
     <ImageView
-        android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="119dp"
@@ -45,7 +39,6 @@
         app:srcCompat="@drawable/ic_ticket_beschreiben" />
 
     <TextView
-        android:id="@+id/textView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="14dp"

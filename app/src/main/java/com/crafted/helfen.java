@@ -2,13 +2,17 @@ package com.crafted;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -72,6 +76,29 @@ public class helfen extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        ImageView sort = findViewById(R.id.helfen_searchfilter);
+        ImageView hilfe_anbieten = findViewById(R.id.helfen_hilfe_anbieten);
+
+        sort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(helfen.this);
+                builder.setMessage("Noch nicht implementiert");
+                AlertDialog dialog = builder.create();
+                dialog.show();
+            }
+        });
+
+        hilfe_anbieten.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(helfen.this);
+                builder.setMessage("Noch nicht implementiert");
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 
@@ -180,7 +207,6 @@ public class helfen extends AppCompatActivity {
                     try {
                         //Get all Profiles
                         ticketList = response.body();
-                        System.out.println(ticketList);
                         List<tag_model> all_tags_list = new ArrayList<tag_model>();
                         //get list of individual Tags
                         for (int i = 0; i < ticketList.size(); i++) {
@@ -209,7 +235,6 @@ public class helfen extends AppCompatActivity {
 
                     } catch (Exception e) {
                         e.printStackTrace();
-                        System.out.println("Error: " + e);
                     }
 
                 }
@@ -217,16 +242,14 @@ public class helfen extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<List<ticket_info_model>> call, Throwable t) {
                     //Handle failure
-                    System.out.println(t);
+                    t.printStackTrace();
 
                 }
 
 
             });
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
+            e.printStackTrace();
 
         }
     }

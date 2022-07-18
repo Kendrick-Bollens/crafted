@@ -155,8 +155,8 @@ public class ticket extends AppCompatActivity {
 
                 @Override
                 public void onFailure(Call<image_model> call, Throwable t) {
-                    //Handle failure
-                    System.out.println(t);
+                    //Handle failure#
+                    t.printStackTrace();
 
                 }
 
@@ -198,7 +198,7 @@ public class ticket extends AppCompatActivity {
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Error: " + e);
+                        e.printStackTrace();
                     }
 
                 }
@@ -206,16 +206,14 @@ public class ticket extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<ticket_info_model> call, Throwable t) {
                     //Handle failure
-                    System.out.println(t);
+                    t.printStackTrace();
 
                 }
 
 
             });
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
+            e.printStackTrace();
 
         }
     }

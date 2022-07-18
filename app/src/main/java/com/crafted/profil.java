@@ -79,6 +79,11 @@ public class profil extends AppCompatActivity {
             }
         });
 
+
+
+
+
+
         int id = getIntent().getExtras().getInt("id");
 
         //Lade die Daten
@@ -164,7 +169,7 @@ public class profil extends AppCompatActivity {
                         //Get all Profiles
                         profil = response.body();
 
-                        System.out.println("Hi");
+
                         updateProfil(profil);
 
                         if (dialog.isShowing()) {
@@ -172,7 +177,6 @@ public class profil extends AppCompatActivity {
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Error: " + e);
                         e.printStackTrace();
                     }
 
@@ -181,16 +185,14 @@ public class profil extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<user_profile_model> call, Throwable t) {
                     //Handle failure
-                    System.out.println(t);
+                    t.printStackTrace();
 
                 }
 
 
             });
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
+            e.printStackTrace();
 
         }
     }

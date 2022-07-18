@@ -157,8 +157,7 @@ public class helfen_ticket_recyclerView_adapter extends RecyclerView.Adapter<hel
             @Override
             public void onFailure(Call<image_model> call, Throwable t) {
                 //Handle failure
-                System.out.println(t);
-
+                t.printStackTrace();
             }
 
 

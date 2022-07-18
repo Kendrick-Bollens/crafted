@@ -43,7 +43,7 @@ public class ticket_image_recyclerView_adapter extends RecyclerView.Adapter<tick
 
         image_model image = this.image_modelList.get(position);
 
-        System.out.println("Here"+ image.getUrl());
+
 
         if(image != null)
             Picasso.get().load(image.getUrl()).into(holder.imageView);

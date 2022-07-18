@@ -26,6 +26,6 @@ public interface ticket_info_interface {
     public Call<ticket_info_model> getTicketById(@Header("Authorization") String authHeader, @Path("ticketId") int id);
 
     @POST("tickets/")
-    void createTicket(@Header("Authorization") String authHeader, @Body ticket_post_model model);
+    public Call<ticket_info_model> createTicket(@Header("Authorization") String authHeader, @Body ticket_post_model model);
 
 }

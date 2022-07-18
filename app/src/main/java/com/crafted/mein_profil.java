@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -74,6 +76,17 @@ public class mein_profil extends AppCompatActivity {
                         return true;
                 }
                 return false;
+            }
+        });
+
+        ImageView editbutton = findViewById(R.id.mein_profil_edit_button);
+        editbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(mein_profil.this);
+                builder.setMessage("Noch nicht implementiert");
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 
@@ -167,7 +180,7 @@ public class mein_profil extends AppCompatActivity {
                         }
 
                     } catch (Exception e) {
-                        System.out.println("Error: " + e);
+                        e.printStackTrace();
                     }
 
                 }
@@ -175,16 +188,14 @@ public class mein_profil extends AppCompatActivity {
                 @Override
                 public void onFailure(Call<user_profile_model> call, Throwable t) {
                     //Handle failure
-                    System.out.println(t);
+                    t.printStackTrace();
 
                 }
 
 
             });
         } catch (Exception e) {
-            System.out.println(e.getClass());
-            System.out.println(e.getCause());
-            System.out.println(e.getMessage());
+            e.printStackTrace();
 
         }
     }

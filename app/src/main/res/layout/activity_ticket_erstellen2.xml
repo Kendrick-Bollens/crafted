@@ -7,37 +7,14 @@
     android:background=" #FAF6F3"
     tools:context=".ticket_erstellen2">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="14dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="14dp"
-        android:fontFamily="@font/poppins"
-        android:text="Neues Ticket"
-        android:textColor="#1B4332"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_ticket_progress_2"
-        tools:layout_editor_absoluteX="321dp"
-        tools:layout_editor_absoluteY="50dp" />
-
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="@dimen/bottom_navbar_height"
         app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -46,100 +23,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="158dp"
-                android:layout_height="88.87dp"
-                android:layout_marginHorizontal="14dp"
-
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="16dp"
-                android:visibility="visible"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7">
-
-                <ImageView
-                    android:id="@+id/ticket_erstellen2_bild_A"
-                    android:layout_width="158dp"
-                    android:layout_height="88.87dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/ic_mein_profil" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="158dp"
-                android:layout_height="88.87dp"
-                android:layout_marginHorizontal="14dp"
-
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="14dp"
-                android:visibility="visible"
-                app:cardCornerRadius="15dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView7">
-
-                <ImageView
-                    android:id="@+id/ticket_erstellen2_bild_B"
-                    android:layout_width="158dp"
-                    android:layout_height="88.87dp"
-                    android:scaleType="centerCrop"
-                    app:srcCompat="@drawable/ic_mein_profil" />
-            </androidx.cardview.widget.CardView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="15dp"
-                    android:paddingTop="16dp"
-                    android:paddingBottom="24dp">
-
-                    <TextView
-                        android:id="@+id/ticket_card_Titel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="top"
-                        android:text="Titel"
-                        android:textAppearance="@style/helfen_card_Titel"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/ticket_card_Beschreibung"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="12dp"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="top"
-                        android:text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore"
-                        android:textAppearance="@style/helfen_card_Beschrebung"
-                        android:textColor="#524D48" />
-
-                    <TextView
-                        android:id="@+id/ticket_card_tags"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="12dp"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="top"
-                        android:text="Tag A, Tag B, Tag C"
-                        android:textAppearance="@style/helfen_card_tags"
-                        android:textColor="#524D48" />
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -150,6 +33,33 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_ticket_bild" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="14dp"
+                android:fontFamily="@font/poppins"
+                android:text="Neues Ticket"
+                android:textColor="#1B4332"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/imageView3"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_ticket_progress_2" />
 
             <TextView
                 android:id="@+id/textView4"
@@ -194,6 +104,181 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ticket_erstellen2_button_bild_hunzufuegen" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView1"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_A"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView2"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_B"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView3"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ticket_erstellen2_CardView1">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_C"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView4"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ticket_erstellen2_CardView2">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_D"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView5"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_erstellen2_CardView3">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_E"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView6"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_erstellen2_CardView4">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_F"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView7"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_erstellen2_CardView5">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_G"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ticket_erstellen2_CardView8"
+                android:layout_width="158dp"
+                android:layout_height="88.87dp"
+
+                android:layout_marginHorizontal="14dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="14dp"
+                android:visibility="visible"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_erstellen2_CardView6">
+
+                <ImageView
+                    android:id="@+id/ticket_erstellen2_bild_H"
+                    android:layout_width="158dp"
+                    android:layout_height="88.87dp"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/ic_mein_profil" />
+            </androidx.cardview.widget.CardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toStartOf="@+id/ticket_erstellen2_CardView7"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ticket_erstellen2_CardView8" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

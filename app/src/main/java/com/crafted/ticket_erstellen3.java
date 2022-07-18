@@ -62,7 +62,7 @@ public class ticket_erstellen3 extends AppCompatActivity {
 
             }
         }catch (Exception e){
-            System.out.println(e);
+            e.printStackTrace();
         }
 
         Button button_weiter = (Button) findViewById(R.id.ticket_erstellen3_button_weiter);

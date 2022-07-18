@@ -22,6 +22,12 @@ public class ticket_model
         this.assignedTo = assignedTo;
     }
 
+    public ticket_model(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+
     public int getId() {
         return id;
     }

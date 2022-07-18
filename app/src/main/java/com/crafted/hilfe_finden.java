@@ -11,6 +11,7 @@ import android.widget.SearchView;
 import android.widget.ToggleButton;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -92,6 +93,18 @@ public class hilfe_finden extends AppCompatActivity {
                 //start next activity
                 view.getContext().startActivity(intent);
 
+            }
+        });
+
+        ImageView sort = findViewById(R.id.hilfe_finden_searchfilter);
+
+        sort.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(hilfe_finden.this);
+                builder.setMessage("Noch nicht implementiert");
+                AlertDialog dialog = builder.create();
+                dialog.show();
             }
         });
 
@@ -231,7 +244,7 @@ public class hilfe_finden extends AppCompatActivity {
                             }
 
                         } catch (Exception e) {
-                            System.out.println("Error: " + e);
+                            e.printStackTrace();
                         }
 
                     }
@@ -239,16 +252,14 @@ public class hilfe_finden extends AppCompatActivity {
                     @Override
                     public void onFailure(Call<List<user_profile_model>> call, Throwable t) {
                         //Handle failure
-                        System.out.println(t);
+                        t.printStackTrace();
 
                     }
 
 
                 });
             } catch (Exception e) {
-                System.out.println(e.getClass());
-                System.out.println(e.getCause());
-                System.out.println(e.getMessage());
+                e.printStackTrace();
 
             }
         }
